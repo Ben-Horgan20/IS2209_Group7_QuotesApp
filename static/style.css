@@ -1,0 +1,39 @@
+
+body {
+    background-color: #F7F7FF;
+}
+
+.header {
+    padding: 1.5rem;
+}
+
+.quote_container {
+    padding: 1.5rem;
+    background-color: #F77B91;
+    border: 2px solid #279AF1;
+    border-radius: 20px;
+}
+
+.alegreya-sc-regular {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+    text-decoration: underline;
+    color: #070600;
+    font-family: "Alegreya SC", serif;
+    font-size: 35px;
+}
+
+h2 {
+    color: #070600;
+    font-family: "Alegreya SC", serif;
+    font-size: 28px;
+}
+
+p {
+    color: #0066B5;
+    font-size: 20px;
+}

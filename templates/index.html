@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote of the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Coustard:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Motivational Quote Generator</h1>
+    </div>
+    <br>
+    <br>
+
+    <h1>Quote of the Day:</h1>
+    <div class="quote_container">
+        <h2>{{ qotd_quote }}</h2>
+        <p>— {{ qotd_author }}</p>
+        <p><i>"{{ qotd_work }}"</i></p>
+    </div>
+
+    <br>
+    <br>
+
+    <hr>
+
+    <br>
+    <br>
+
+    <h1>Random Quote:</h1>
+    <div class="quote_container">
+        <h2>{{ rand_quote }}</h2>
+        <p>— {{ rand_author }}</p>
+        <p><i>"{{ rand_work }}"</i></p>
+    </div>
+
+    <br>
+    <br>
+
+    <hr>
+
+    <br>
+    <br>
+
+    <h1>Quote Generator:</h1>
+    <div class="quote_container">
+        <h2>{{ quote }}</h2>
+        <p>— {{ author }}</p>
+        <p><i>"{{ work }}"</i></p>
+    </div>
+
+
+</body>
+</html>
