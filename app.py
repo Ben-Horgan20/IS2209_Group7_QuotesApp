@@ -2,11 +2,17 @@ from flask import Flask, render_template, request
 import requests
 from dotenv import load_dotenv
 import os
+from supabase import create_client
+
 app = Flask(__name__)
 
 load_dotenv()
 
 API_KEY = os.getenv("NAME_API_KEY")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @app.route('/')
 def index():
@@ -38,7 +44,7 @@ def index():
         headers={"X-Api-Key": API_KEY},
         params={'categories': categories}
     )
-    data = rand_response.json()[0]
+    data = response.json()[0]
     quote = data['quote']
     author = data['author']
     work = data['work']

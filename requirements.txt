@@ -1,4 +1,6 @@
 flask
-psycopg[binary]
 requests
 python-dotenv
+ruff
+pytest
+supabase
