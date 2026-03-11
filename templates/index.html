@@ -15,6 +15,7 @@
     <br>
 
     <h1>Quote of the Day:</h1>
+    <br>
     <div class="quote_container">
         <h2>{{ qotd_quote }}</h2>
         <p>— {{ qotd_author }}</p>
@@ -30,6 +31,7 @@
     <br>
 
     <h1>Random Quote:</h1>
+    <br>
     <div class="quote_container">
         <h2>{{ rand_quote }}</h2>
         <p>— {{ rand_author }}</p>
@@ -45,6 +47,7 @@
     <br>
 
     <h1>Quote Generator:</h1>
+    <br>
     <div class="quote_container">
         <h2>{{ quote }}</h2>
         <p>— {{ author }}</p>
@@ -52,13 +55,14 @@
     </div>
 
     <h1>Recently Saved Quotes</h1>
-        {% for item in recent_quotes %}
-            <div class="quote_container">
-                <p>{{ item.quote }}</p>
-                <p>- {{ item.author }}</p>
-                <p><i>"{{ item.work }}"</i></p>
-            </div>
-        {% endfor %}
+    <br>
+    {% for item in recent_quotes %}
+        <div class="quote_container">
+            <p>{{ item.quote }}</p>
+            <p>- {{ item.author }}</p>
+            <p><i>"{{ item.work }}"</i></p>
+        </div>
+    {% endfor %}
 
 
 </body>
