@@ -12,9 +12,8 @@ body {
     width: 600px;
     margin: 0 auto 0 15%;
     text-align: center;
-    /*background-color: #008BCC;*/
-    background-color: #212122;
-    border: 2px solid #0AB1FF;
+    background-color: #2b374a;
+    border: 2px solid #384457;
     border-radius: 20px;
 }
 
@@ -26,18 +25,22 @@ body {
 
 h1 {
     text-decoration: underline;
-    color: #EFF6E0;
+    color: #d6d6d6;
     font-family: "Alegreya SC", serif;
     font-size: 35px;
 }
 
 h2 {
-    color: #F7FAEF;
+    color: #56b2d6;
     font-family: "Alegreya SC", serif;
     font-size: 28px;
 }
 
 p {
-    color: #0066B5;
+    color: #f2f2f2;
     font-size: 20px;
+}
+
+i {
+    color: #999999;
 }
