@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+import datetime
 import requests
 from dotenv import load_dotenv
 import os
 from supabase import create_client
 
 app = Flask(__name__)
+START_TIME = datetime.datetime.utcnow()
 
 load_dotenv()
 
@@ -21,6 +23,42 @@ def save_quote(quote, author, work, category, source):
         "category": category,
         "source": source,
     }).execute()
+
+def check_dependencies():
+    checks = {}
+    try:
+        supabase.table('quotes').select('id').limit(1).execute()
+        checks['database'] = 'ok'
+    except Exception as e:
+        checks['database'] = f'error: {str(e)}'
+
+    checks['external_api'] = 'ok' if API_KEY else 'missing key'
+    return checks
+
+@app.route('/health')
+def health():
+    checks = check_dependencies()
+    overall = 'ok' if all(v == 'ok' for v in checks.values()) else 'degraded'
+    status_code = 200 if overall == 'ok' else 503
+    return jsonify({'status': overall, 'checks': checks}), status_code
+
+@app.route('/status')
+def status():
+    checks = check_dependencies()
+    overall = 'ok' if all(v == 'ok' for v in checks.values()) else 'degraded'
+    uptime = datetime.datetime.utcnow() - START_TIME
+    quote_count = None
+    try:
+        result = supabase.table('quotes').select('id', count='exact').execute()
+        quote_count = result.count
+    except Exception:
+        pass
+    return render_template('status.html',
+        overall=overall,
+        checks=checks,
+        uptime=str(uptime).split('.')[0],
+        quote_count=quote_count
+    )
 
 @app.route('/')
 def index():
@@ -48,7 +86,7 @@ def index():
     save_quote(rand_quote, rand_author, rand_work, None, 'random')
 
     # Generic quotes
-    categories = 'success,wisdom'
+    categories = 'wisdom,success,humor'
     response = requests.get(
         'https://api.api-ninjas.com/v2/randomquotes',
         headers={"X-Api-Key": API_KEY},
