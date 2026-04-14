@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Status</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>App Status</h1>
+    </div>
+
+    <div class="quote_container">
+        <h2>Overall: {{ overall.upper() }}</h2>
+        <p>Uptime: {{ uptime }}</p>
+        <p>Quotes in DB: {{ quote_count if quote_count is not none else 'unavailable' }}</p>
+        <br>
+        <p>Database: {{ checks.database }}</p>
+        <p>External API: {{ checks.external_api }}</p>
+    </div>
+</body>
+</html>
