@@ -11,13 +11,16 @@
     <div class="header">
         <h1>Motivational Quote Generator</h1>
     </div>
+
     <br>
     <br>
 
-    <h1>Quote of the Day:</h1>
-    <br>
+    <div class="quote_header_container">
+        <h1>Quote of the Day:</h1>
+        <br>
+    </div>
     <div class="quote_container">
-        <h2>{{ qotd_quote }}</h2>
+        <h2>"{{ qotd_quote }}"</h2>
         <p>— {{ qotd_author }}</p>
         <p><i>"{{ qotd_work }}"</i></p>
     </div>
@@ -25,15 +28,12 @@
     <br>
     <br>
 
-    <hr>
-
-    <br>
-    <br>
-
-    <h1>Random Quote:</h1>
-    <br>
+    <div class="quote_header_container">
+        <h1>Random Quote:</h1>
+        <br>
+    </div>
     <div class="quote_container">
-        <h2>{{ rand_quote }}</h2>
+        <h2>"{{ rand_quote }}"</h2>
         <p>— {{ rand_author }}</p>
         <p><i>"{{ rand_work }}"</i></p>
     </div>
@@ -41,27 +41,29 @@
     <br>
     <br>
 
-    <hr>
-
-    <br>
-    <br>
-
-    <h1>Quote Generator:</h1>
-    <br>
+    <div class="quote_header_container">
+        <h1>Quote Generator:</h1>
+        <br>
+    </div>
     <div class="quote_container">
-        <h2>{{ quote }}</h2>
+        <h2>"{{ quote }}"</h2>
         <p>— {{ author }}</p>
         <p><i>"{{ work }}"</i></p>
     </div>
 
-    <h1>Recently Saved Quotes</h1>
     <br>
+
+    <div class="quote_header_container">
+        <h1>Recently Saved Quotes</h1>
+        <br>
+    </div>
     {% for item in recent_quotes %}
         <div class="quote_container">
-            <p>{{ item.quote }}</p>
+            <p>"{{ item.quote }}"</p>
             <p>- {{ item.author }}</p>
             <p><i>"{{ item.work }}"</i></p>
         </div>
+        <br>
     {% endfor %}
 
 

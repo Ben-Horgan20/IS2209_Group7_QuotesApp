@@ -9,12 +9,19 @@ body {
 
 .quote_container {
     padding: 1.5rem;
-    width: 600px;
-    margin: 0 auto 0 15%;
+    width: 45%;
+    margin: 0 auto;
     text-align: center;
     background-color: #2b374a;
     border: 2px solid #384457;
     border-radius: 20px;
+}
+
+.quote_header_container {
+    padding: 1.5rem;
+    width: 600px;
+    margin: 0 auto 0 15%;
+    text-align: center;
 }
 
 .alegreya-sc-regular {
